@@ -1,0 +1,157 @@
+* { position: relative; box-sizing: border-box; }
+
+body { 
+  
+  width: 600px;
+  margin: 2rem auto;
+  padding: 50px;
+  background: #ebebeb;
+}  
+
+form { 
+ width: 100%;
+ 
+
+}
+
+.rating-form { 
+  width: 175px;
+  position: absolute;
+  top: 0;
+  
+  & > form { 
+  
+    &:not(:first-child) { margin-top: 5rem; }
+   
+  }
+}
+
+.m-rate-slider { 
+
+  &:not(:first-child) { 
+    margin-top: 2rem;
+   
+  }
+
+}
+
+.review-area { 
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55%;
+}
+
+.m-rate-thumb { 
+   position: absolute;
+   width: 50px;
+   height: 50px;
+   background: white;
+   border-bottom: 8px solid grey;
+   text-align: center;
+   font: 700 1.3rem/2 "Helvetica Neue", Helvetica, sans-serif;
+    border-radius: 10px;
+  bottom: 135%;
+  left: -250px;
+  transform: translateX(-18px);
+  
+  &:before { 
+    content: attr(data-rate-value);
+  }
+  
+  &:after { 
+      content: "";
+  position: absolute; 
+  width: 0;
+  height: 0;
+  border-top: 10px solid #999999;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: 120%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -1px;
+  }
+  
+  &[for="helpfulness"] { 
+    border-color: hsl(185, 88%, 28%);
+      &:after { 
+        border-top-color: inherit;
+    }
+  }
+  
+  &[for="humanlike"] { 
+    border-color: hsl(92, 59%, 51%);
+      &:after { 
+        border-top-color: inherit;
+    }
+  }
+  
+  &[for="friendliness"] { 
+    border-color: hsl(355, 61%, 50%);
+      &:after { 
+        border-top-color: inherit;
+    }
+  }
+  
+  &[for="responsiveness"] { 
+    border-color: hsl(14, 81%, 59%);
+      &:after { 
+        border-top-color: inherit;
+    }
+  }
+  
+  &[for="relevancy"] { 
+    border-color: hsl(46, 81%, 62%);
+      &:after { 
+        border-top-color: inherit;
+    }
+  }
+  
+  
+}
+
+
+input[type="range"]{
+   -webkit-appearance:none !important;
+    width: 100%;
+    height: 5px;
+    background: gainsboro;
+  
+ }
+
+ input[type="range"]::-webkit-slider-thumb{
+   -webkit-appearance:none !important;
+   width: 15px;
+  height: 15px;
+   border-radius: 50%;
+   background: white;
+   box-shadow: inset 0 0 0 1px;
+   cursor: pointer;
+ }
+
+.m-total-rating-thumb { 
+   width: 50px;
+   height: 50px;
+   background: white;
+   text-align: center;
+   box-shadow: inset 0 40px 0 0 white, inset 45px -5px 0 -35px hsl(185, 88%, 28%), inset 45px -5px 0 -25px hsl(92, 59%, 51%), inset 45px -5px 0 -15px hsl(355, 61%, 50%), inset 45px -5px 0 -5px hsl(14, 81%, 59%), inset 45px -5px 0 5px hsl(46, 81%, 62%);
+
+  float: right;
+top: 61px;
+left: 10px;
+  
+    &:before { 
+    content: attr(data-the-total-rating-value);
+    font: 700 1.3rem/2 "Helvetica Neue", Helvetica, sans-serif;
+  }
+
+}
+
+textarea {  
+ width: 85%;
+ min-height: 100px;
+ resize: vertical;
+ padding: .5rem;
+}
